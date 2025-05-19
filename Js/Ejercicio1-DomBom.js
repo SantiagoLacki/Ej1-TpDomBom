@@ -14,3 +14,38 @@
 // un mensaje indicando al usuario que adivino 
 // el numero.
 
+let numeroAleatorio;
+
+const generarNumero = (e) => {
+  e.preventDefault()
+  numeroAleatorio = Math.floor(Math.random() * 101)
+  btnComenzarJuego.setAttribute('disabled',`disabled`)
+}
+
+const adivinar = (e) => {
+  e.preventDefault()
+  let numeroIngresado = document.getElementById('num').value
+
+  numeroIngresado = parseInt(numeroIngresado);
+  
+  if (numeroIngresado === numeroAleatorio) {
+    alert(`GANASTE!! EL NUMERO MAGICO ERA: ${numeroAleatorio}`)
+    btnAdivinarNumero.reset();
+    btnComenzarJuego.removeAttribute(`disabled`)
+  }
+  else if (numeroIngresado < numeroAleatorio) {
+    alert(`El numero magico es mayor que ${numeroIngresado}`)
+    btnAdivinarNumero.reset();
+  }
+  else {
+    alert(`El numero magico es menor que  ${numeroIngresado}`)
+    btnAdivinarNumero.reset();
+  }
+}
+
+const btnComenzarJuego = document.getElementById('btnComenzar')
+const btnAdivinarNumero = document.getElementById('formAdivinar')
+
+
+btnComenzarJuego.addEventListener('click', generarNumero)
+btnAdivinarNumero.addEventListener('submit', adivinar)

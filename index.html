@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +12,16 @@
 
   <main>
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Adivina el numero</h1>
-          <label for="num1">para adivinar, ingrese un numero y presione el boton enviar:</label>
-          <input type="number" id="num1" placeholder="Ingresa un numero.">
-          <button class="btn btn-primary">Adivinar</button>
+      <div class="row mt-5 p-4 border rounded bg-light-subtle">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <h1 class="text-center pt-4">NUMERO MAGICO</h1>
+          <p class="text-center mt-3">Presiona "Comenzar Juaego", se generara un numero aleatorio del 0 al 100 y tienes que ingresar numeros hasta adivinarlo. Cada vez que ingreses un numero recibiras pistas para ayudarte a ganar.</p>
+          <button type="btn" id="btnComenzar" class="btn btn-success w-50 mt-5">Comenzar Juego</button>
+          <form id="formAdivinar" class="d-flex flex-column align-items-center">
+            <label for="num" class="w-100 text-center pt-3">Para adivinar ingrese un numero y presione el boton adivinar:</label>
+            <input type="number" id="num" class="w-50 mt-3" placeholder="Ingresa un numero (0-100).">
+            <button type="submit" id="btnAdivinar" class="btn btn-primary w-50 mt-3">Adivinar</button>
+          </form>
         </div>
       </div>
     </div>
